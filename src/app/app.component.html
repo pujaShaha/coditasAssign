@@ -1,0 +1,28 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col searchCol">
+            <input type="text" placeholder="search by name" #searchText>
+            <button (click)="searchUser(searchText.value)">Search</button>
+        </div>
+    </div>
+    <div class="row totalUser">Total User : {{totalUser}}</div>
+    <div class="row userDetails" *ngFor = "let user of users; index as i">
+        <div class="col-sm-2">
+            <img src="{{user.avatar_url}}" class="profilePic">
+        </div>
+        <div class="col-sm-8" > 
+            <p> Name:{{user.login}}</p>
+            <p> Profile URL : <a href="{{user.html_url}}" target="_blank">{{user.html_url}}</a></p>
+            <!-- <div *ngIf = "isDetails"> -->
+            <div *ngFor = "let details of userDetail">
+                <p>{{details.name}} : {{details.language}}</p>
+            </div>
+            <!-- </div> -->
+        </div>
+        <div class="col-sm-2">
+            <button class="btn-primary" (click)="userDetails(i)">Details</button>
+        </div>
+    </div>
+</div>
+<router-outlet></router-outlet>

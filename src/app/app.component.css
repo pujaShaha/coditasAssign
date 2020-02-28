@@ -1,0 +1,28 @@
+* {
+    font-family: Lato !important;
+}
+.row {
+    padding: 1%;
+}
+.searchCol {
+    padding: 2%;
+    margin: 2%;
+    background-color: dodgerblue;
+}
+.userDetails {
+    padding: 1%;
+    margin-top: 0.5%;
+    margin-left: 20%;
+    margin-right: 20%;
+    background-color: rgb(223, 227, 231);
+}
+.totalUser {
+    padding: 1%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.profilePic{
+    height: 60px;
+    width: 60px;
+}
