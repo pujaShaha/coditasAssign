@@ -1,9 +1,16 @@
 
 <div class="container">
-    <div class="row">
-        <div class="col searchCol">
+    <div class="row searchCol">
+        <div class="col-sm-6">
             <input type="text" placeholder="search by name" #searchText>
             <button (click)="searchUser(searchText.value)">Search</button>
+        </div>
+        <div class="col-sm-6">
+            <select class="custom-select" (change)="sortUser($event)" placeholder="sort">
+                <option value="-1" selected="true">Sort By</option>
+                <option value="1">Name(A-Z)</option>
+                <option value="2">Name(Z-A)</option>>
+            </select>
         </div>
     </div>
     <div class="row totalUser">Total User : {{totalUser}}</div>
@@ -14,11 +21,11 @@
         <div class="col-sm-8" > 
             <p> Name:{{user.login}}</p>
             <p> Profile URL : <a href="{{user.html_url}}" target="_blank">{{user.html_url}}</a></p>
-            <!-- <div *ngIf = "isDetails"> -->
+            <div *ngIf = "user.isDetails">
             <div *ngFor = "let details of userDetail">
                 <p>{{details.name}} : {{details.language}}</p>
             </div>
-            <!-- </div> -->
+            </div>
         </div>
         <div class="col-sm-2">
             <button class="btn-primary" (click)="userDetails(i)">Details</button>

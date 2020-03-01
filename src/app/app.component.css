@@ -6,7 +6,9 @@
 }
 .searchCol {
     padding: 2%;
-    margin: 2%;
+    margin-top: 2%;
+    margin-left: 20%;
+    margin-right: 20%;
     background-color: dodgerblue;
 }
 .userDetails {
@@ -18,8 +20,8 @@
 }
 .totalUser {
     padding: 1%;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 20%;
+    margin-right: 20%;
 }
 
 .profilePic{
