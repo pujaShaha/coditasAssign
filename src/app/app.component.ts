@@ -16,6 +16,9 @@ export class AppComponent {
   users;
   selectedOpn = -1;
   dataOfUser = [];
+  p = 1;
+  count = 5;
+  datalength = 0;
   constructor(private http : HttpClient) {
 
   }
@@ -30,6 +33,7 @@ export class AppComponent {
       console.log('data', data);
       this.userData = data;
       this.users= this.userData.items;
+      this.datalength = this.users.length;
       this.totalUser = this.userData.total_count;
     })
   }
@@ -75,6 +79,7 @@ export class AppComponent {
         return 0 //default return value (no sorting)
     })
      }
+
   console.log('sorted array', this.users);
   }
 }

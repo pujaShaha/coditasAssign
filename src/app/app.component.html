@@ -14,7 +14,7 @@
         </div>
     </div>
     <div class="row totalUser">Total User : {{totalUser}}</div>
-    <div class="row userDetails" *ngFor = "let user of users; index as i">
+    <div class="row userDetails" *ngFor = "let user of users | paginate: { itemsPerPage: count, currentPage: p }; index as i">
         <div class="col-sm-2">
             <img src="{{user.avatar_url}}" class="profilePic">
         </div>
@@ -30,6 +30,9 @@
         <div class="col-sm-2">
             <button class="btn-primary" (click)="userDetails(i)">Details</button>
         </div>
+    </div>
+    <div class="row pagination" *ngIf = "datalength > 0">
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
     </div>
 </div>
 <router-outlet></router-outlet>

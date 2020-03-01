@@ -28,3 +28,9 @@
     height: 60px;
     width: 60px;
 }
+.pagination{
+    padding: 2%;
+    margin-top: 2%;
+    margin-left: 20%;
+    margin-right: 20%;
+}
