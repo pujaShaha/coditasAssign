@@ -14,6 +14,9 @@
         </div>
     </div>
     <div class="row totalUser">Total User : {{totalUser}}</div>
+    <div class="row spinner" *ngIf = "isDataLoaded">
+        <div class="spinner-border"></div>
+    </div>
     <div class="row userDetails" *ngFor = "let user of users | paginate: { itemsPerPage: count, currentPage: p }; index as i">
         <div class="col-sm-2">
             <img src="{{user.avatar_url}}" class="profilePic">
@@ -28,7 +31,7 @@
             </div>
         </div>
         <div class="col-sm-2">
-            <button class="btn-primary" (click)="userDetails(i)">Details</button>
+            <button class="btn-primary" (click)="userDetails(user.login)">Details</button>
         </div>
     </div>
     <div class="row pagination" *ngIf = "datalength > 0">
