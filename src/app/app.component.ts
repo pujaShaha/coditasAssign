@@ -39,6 +39,13 @@ export class AppComponent {
   }
 
   userDetails(index) {
+    for(let i=0; i<this.users.length ; i++) {
+      console.log('in for loop');
+      if(this.users[i].isDetails) {
+        console.log('in if method');
+        this.users[i]['isDetails'] = false ;
+      }
+    }
     this.isDetails = false ;
     let userName = this.users[index].login ;
     console.log('in detalis method',index);
